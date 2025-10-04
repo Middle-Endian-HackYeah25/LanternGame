@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uoqhwxx8q56e"
-path="res://.godot/imported/Krzeslo.png-5bbe796da7ccd1bedfbc5959b77ec118.ctex"
+uid="uid://cjrfea11dq2pt"
+path="res://.godot/imported/myszka.png-9efb07fff265684d74114085299ee153.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Krzeslo.png"
-dest_files=["res://.godot/imported/Krzeslo.png-5bbe796da7ccd1bedfbc5959b77ec118.ctex"]
+source_file="res://Assets/Komputer/myszka.png"
+dest_files=["res://.godot/imported/myszka.png-9efb07fff265684d74114085299ee153.ctex"]
 
 [params]
 

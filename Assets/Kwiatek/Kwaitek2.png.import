@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgndhrm676xyr"
-path="res://.godot/imported/Gazety.png-43b605b2c86ede101ddf54ffc7924b1b.ctex"
+uid="uid://ovippgck4aym"
+path="res://.godot/imported/Kwaitek2.png-8089feb90abb7227475318dc903ccd46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gazety.png"
-dest_files=["res://.godot/imported/Gazety.png-43b605b2c86ede101ddf54ffc7924b1b.ctex"]
+source_file="res://Assets/Kwiatek/Kwaitek2.png"
+dest_files=["res://.godot/imported/Kwaitek2.png-8089feb90abb7227475318dc903ccd46.ctex"]
 
 [params]
 
