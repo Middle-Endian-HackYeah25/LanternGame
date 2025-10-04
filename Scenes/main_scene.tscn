@@ -1,11 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://uqasxqq44njg"]
 
 [ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
+
 [ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_52fb6"]
 [ext_resource type="Texture2D" uid="uid://nsxuv3txfaeu" path="res://Assets/ground.jpg" id="1_x6ack"]
+
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
+[ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
 
 [node name="MainScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_jv6wh")]
 
 [node name="Level0" type="Node2D" parent="."]
 
@@ -27,9 +32,14 @@ texture = ExtResource("1_x6ack")
 
 [node name="KeysContainer" type="HBoxContainer" parent="HUD"]
 anchors_preset = -1
-anchor_right = 0.29500002
-anchor_bottom = 0.17400001
-offset_right = 0.15997314
-offset_bottom = 0.24799347
+anchor_right = 0.17400001
+anchor_bottom = 0.11000001
+offset_left = 1.0
+offset_top = -1.0
+offset_right = -0.4480133
+offset_bottom = -0.2800064
 script = ExtResource("1_6l7je")
 key_texture = ExtResource("2_jv6wh")
+
+[node name="KeyItem" parent="." instance=ExtResource("4_x6ack")]
+position = Vector2(-354, -30)
