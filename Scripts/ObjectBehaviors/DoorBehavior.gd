@@ -22,7 +22,7 @@ func play_random_sound():
 
 
 func _physics_process(delta: float) -> void:
-	if angular_velocity > 1.5 or angular_velocity < -1.5: # 5.0 = small threshold to avoid noise
+	if angular_velocity > 1.5 or angular_velocity < -1.5:
 		if not audio.playing:
 			play_random_sound()
 
