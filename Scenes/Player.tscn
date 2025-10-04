@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck40427nwjh4a"]
+[gd_scene load_steps=7 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://8m6qcspndh80" path="res://Assets/Latarka2.png" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(128, 128)
-
-[sub_resource type="Gradient" id="Gradient_kyqiw"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gntrk"]
-gradient = SubResource("Gradient_kyqiw")
+size = Vector2(99, 81)
 
 [sub_resource type="Gradient" id="Gradient_gntrk"]
 offsets = PackedFloat32Array(0, 0.026666667)
@@ -24,21 +20,26 @@ fill = 2
 script = ExtResource("1_kyqiw")
 
 [node name="playerCollision2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="playerSprite" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_rpqav")
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gntrk")
 
 [node name="flashlight" type="PointLight2D" parent="CharacterBody2D"]
-position = Vector2(9.000045, -141.1725)
+position = Vector2(35, -229)
 rotation = -1.5707964
-scale = Vector2(2.618671, 1.7094129)
-texture = SubResource("GradientTexture2D_gntrk")
+scale = Vector2(0.3123478, 0.64143217)
+texture = ExtResource("3_gntrk")
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterBody2D/flashlight"]
-polygon = PackedVector2Array(-27.576311, -42.70475, 186.59966, -162.62895, 225.66609, -101.204346, 244.9695, 1.1699791, 230.26213, 126.359146, 184.30164, 166.13889, -27.576315, 33.92975)
+[node name="Area2D" type="Area2D" parent="CharacterBody2D/flashlight"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/flashlight/Area2D"]
+polygon = PackedVector2Array(-683.62946, -6.23605, 140.3476, -190.19937, 579.6964, -87.30463, 665.12537, -1.5590038, 579.6964, 77.95058, 189.16406, 193.31741, -353.86887, 76.391556)
 
 [node name="playerSilouette" type="PointLight2D" parent="CharacterBody2D"]
-position = Vector2(1.9073486e-06, -9.179115e-06)
-scale = Vector2(2, 1.9999999)
+position = Vector2(-0.49999666, -0.5000019)
+scale = Vector2(1.546875, 1.265625)
 texture = SubResource("GradientTexture2D_dewec")
