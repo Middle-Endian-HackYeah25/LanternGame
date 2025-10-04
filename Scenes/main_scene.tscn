@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://uqasxqq44njg"]
+[gd_scene load_steps=11 format=3 uid="uid://uqasxqq44njg"]
 
 [ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
 [ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://d3kqkxp7odqwd" path="res://Scenes/Objects/door.tscn" id="2_iacmt"]
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
+[ext_resource type="Script" uid="uid://olim7csg7bph" path="res://Scripts/ambient_player.gd" id="6_6ev3c"]
+[ext_resource type="AudioStream" uid="uid://bufdp0quenr3e" path="res://Audio/Ambient/demonic-ambience-horror-sound-8-vol-001-140825.mp3" id="7_mai8y"]
+[ext_resource type="AudioStream" uid="uid://bqn83qpkcfkk" path="res://Audio/Ambient/disturbing-horror-ambience-sound-7-vol-002-160623.mp3" id="8_76v2p"]
+[ext_resource type="AudioStream" uid="uid://bxpjvik8xg5hm" path="res://Audio/Ambient/dry-thunder-364468.mp3" id="9_drdnd"]
+[ext_resource type="AudioStream" uid="uid://btv4ft1lm2mhi" path="res://Audio/Ambient/ghost-whisper-351569.mp3" id="10_ioaeq"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -37,3 +42,9 @@ key_texture = ExtResource("2_jv6wh")
 
 [node name="KeyItem" parent="." instance=ExtResource("4_x6ack")]
 position = Vector2(-354, -30)
+
+[node name="AmbientPlayer" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("6_6ev3c")
+ambient_sounds = Array[AudioStream]([ExtResource("7_mai8y"), ExtResource("8_76v2p"), ExtResource("9_drdnd"), ExtResource("10_ioaeq")])
+
+[node name="Timer" type="Timer" parent="AmbientPlayer"]
