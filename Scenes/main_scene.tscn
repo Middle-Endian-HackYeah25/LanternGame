@@ -1,7 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://uqasxqq44njg"]
 
 [ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
-[ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_jv6wh"]
+
+[ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_52fb6"]
+[ext_resource type="Texture2D" uid="uid://nsxuv3txfaeu" path="res://Assets/ground.jpg" id="1_x6ack"]
+
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
 
@@ -11,9 +14,19 @@
 
 [node name="Level0" type="Node2D" parent="."]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Level0"]
+color = Color(0.021434637, 0.021434635, 0.021434633, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level0"]
+position = Vector2(-4, 0.5000076)
+scale = Vector2(1.9627119, 1.813889)
+texture = ExtResource("1_x6ack")
+
 [node name="Cam0_0" type="Camera2D" parent="Level0"]
 
 [node name="TileMap" type="TileMapLayer" parent="Level0"]
+
+[node name="Player" parent="Level0" instance=ExtResource("1_52fb6")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

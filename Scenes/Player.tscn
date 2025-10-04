@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck40427nwjh4a"]
+[gd_scene load_steps=8 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="1_rpqav"]
@@ -6,13 +6,39 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(128, 128)
 
+[sub_resource type="Gradient" id="Gradient_kyqiw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gntrk"]
+gradient = SubResource("Gradient_kyqiw")
+
+[sub_resource type="Gradient" id="Gradient_gntrk"]
+offsets = PackedFloat32Array(0, 0.026666667)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dewec"]
+gradient = SubResource("Gradient_gntrk")
+fill = 2
+
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_kyqiw")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="playerCollision2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="playerSprite" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_rpqav")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_kyqiw")
+[node name="flashlight" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(9.000045, -141.1725)
+rotation = -1.5707964
+scale = Vector2(2.618671, 1.7094129)
+texture = SubResource("GradientTexture2D_gntrk")
+
+[node name="Polygon2D" type="Polygon2D" parent="CharacterBody2D/flashlight"]
+polygon = PackedVector2Array(-27.576311, -42.70475, 186.59966, -162.62895, 225.66609, -101.204346, 244.9695, 1.1699791, 230.26213, 126.359146, 184.30164, 166.13889, -27.576315, 33.92975)
+
+[node name="playerSilouette" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(1.9073486e-06, -9.179115e-06)
+scale = Vector2(2, 1.9999999)
+texture = SubResource("GradientTexture2D_dewec")
