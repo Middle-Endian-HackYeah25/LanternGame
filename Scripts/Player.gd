@@ -10,5 +10,9 @@ func _physics_process(delta):
 		velocity = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0 , SPEED)
-		velocity.x = move_toward(velocity.x, 0 , SPEED)
+		velocity.y = move_toward(velocity.y, 0 , SPEED)
 	move_and_slide()
+
+func _process(delta):
+	look_at(get_global_mouse_position())
+	rotation_degrees += 90
