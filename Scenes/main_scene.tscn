@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://uqasxqq44njg"]
+[gd_scene load_steps=3 format=3 uid="uid://uqasxqq44njg"]
+
+[ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
+[ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -11,5 +14,10 @@
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="KeysContainer" type="HBoxContainer" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_right = 0.29500002
+anchor_bottom = 0.17400001
+offset_right = 0.15997314
+offset_bottom = 0.24799347
+script = ExtResource("1_6l7je")
+key_texture = ExtResource("2_jv6wh")
