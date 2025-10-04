@@ -1,17 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3kqkxp7odqwd"]
+[gd_scene load_steps=10 format=3 uid="uid://d3kqkxp7odqwd"]
 
-[ext_resource type="Script" path="res://Scripts/ObjectBehaviors/DoorBehavior.gd" id="1_l0b71"]
-[ext_resource type="Texture2D" uid="uid://bipqcn3i1o3ur" path="res://Assets/door_unlocked_placeholder.png" id="2_fahql"]
-[ext_resource type="Texture2D" uid="uid://dxnmxkf6fdygs" path="res://Assets/door_locked_placeholder.png" id="3_ab4ky"]
+[ext_resource type="Script" uid="uid://djhi8ynoxhjis" path="res://Scripts/ObjectBehaviors/DoorBehavior.gd" id="1_l0b71"]
+[ext_resource type="AudioStream" uid="uid://t2o0mh8jjw4c" path="res://Audio/door-sqeak.wav" id="2_153u2"]
+[ext_resource type="Texture2D" uid="uid://cpuvwry4w8xeo" path="res://Assets/Drzwi/Drzwi1.png" id="2_l0b71"]
+[ext_resource type="AudioStream" uid="uid://buc6ktkm7tn4k" path="res://Audio/door-sqeak2.wav" id="3_mnli5"]
+[ext_resource type="Texture2D" uid="uid://p7v6q5m0s5oo" path="res://Assets/Drzwi/Drzwi2.png" id="3_ynea2"]
+[ext_resource type="AudioStream" uid="uid://bktk7jtp1jrbw" path="res://Audio/door-sqeak3.wav" id="4_6qaid"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a43ba"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_fahql")
+"texture": ExtResource("2_l0b71")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ab4ky")
+"texture": ExtResource("3_ynea2")
 }],
 "loop": true,
 "name": &"default",
@@ -33,9 +36,13 @@ scale = Vector2(1, 0.9916793)
 mass = 2.0
 linear_damp = 4.0
 script = ExtResource("1_l0b71")
+sounds = Array[AudioStream]([ExtResource("2_153u2"), ExtResource("3_mnli5"), ExtResource("4_6qaid")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-7.1054274e-15, 1.1920929e-07)
+rotation = 3.1415927
+scale = Vector2(0.09246618, -0.047026664)
 sprite_frames = SubResource("SpriteFrames_a43ba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -57,3 +64,4 @@ node_b = NodePath("../hinge")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_l0b71")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
