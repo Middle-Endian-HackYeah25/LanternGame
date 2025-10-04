@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfolky6ci8wuu"]
+
+[ext_resource type="Script" uid="uid://bi6d2smrdy8gs" path="res://Scripts/basic_enemy.gd" id="1_6x443"]
+[ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_b7xc3"]
+
+[node name="BasicEnemy" type="RigidBody2D"]
+script = ExtResource("1_6x443")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(63, 3, 63, 54, 48, 62, -1, 64, -51, 62, -60, 50, -61, 0, -62, -53, -52, -62, -2, -66, 49, -61, 62, -51)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b7xc3")
