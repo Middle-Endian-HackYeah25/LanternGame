@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @export var PUSH_FORCE = 10.0
-@export var INTERACT_RANGE = 100.0
+@export var INTERACT_RANGE = 200.0
 
 func _physics_process(delta):
 	
@@ -37,7 +37,6 @@ func interact() -> void:
 	var min_distance = INF # infinity
 
 	var interactables = get_tree().get_nodes_in_group("interactable")
-	if interactables.size() == 0:
 	for i in interactables:
 		var distance = global_position.distance_to(i.global_position)
 		if distance < min_distance:
