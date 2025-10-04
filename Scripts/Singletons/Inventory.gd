@@ -1,6 +1,6 @@
 extends Node
 
-var key_count: int = 2
+var key_count: int = 0
 
 signal key_amt_changed(new_amt: int)
 

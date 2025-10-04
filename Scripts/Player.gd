@@ -22,3 +22,6 @@ func _physics_process(delta):
 func _process(delta):
 	look_at(get_global_mouse_position())
 	rotation_degrees += 90
+
+func _ready() -> void:
+	add_to_group("player")
