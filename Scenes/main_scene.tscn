@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
 [ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_jv6wh"]
-[ext_resource type="PackedScene" uid="uid://d3kqkxp7odqwd" path="res://Scenes/Objects/door.tscn" id="2_iacmt"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/door.tscn" id="2_iacmt"]
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
+[ext_resource type="PackedScene" uid="uid://cfolky6ci8wuu" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
 [ext_resource type="Script" uid="uid://olim7csg7bph" path="res://Scripts/ambient_player.gd" id="6_6ev3c"]
 [ext_resource type="AudioStream" uid="uid://bufdp0quenr3e" path="res://Audio/Ambient/demonic-ambience-horror-sound-8-vol-001-140825.mp3" id="7_mai8y"]
@@ -26,6 +27,8 @@ position = Vector2(-229, 94)
 
 [node name="Door2" parent="Level0" instance=ExtResource("2_iacmt")]
 position = Vector2(-227, 216)
+
+[node name="BasicEnemy" parent="Level0" instance=ExtResource("3_6ev3c")]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

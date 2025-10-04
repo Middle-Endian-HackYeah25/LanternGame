@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uoqhwxx8q56e"
-path="res://.godot/imported/Krzeslo.png-5bbe796da7ccd1bedfbc5959b77ec118.ctex"
+uid="uid://djhopb4qxdyl6"
+path="res://.godot/imported/Lampka1.png-2de9df1471599f2d42b7a1b9458064a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Krzeslo.png"
-dest_files=["res://.godot/imported/Krzeslo.png-5bbe796da7ccd1bedfbc5959b77ec118.ctex"]
+source_file="res://Assets/Lampa/Lampka1.png"
+dest_files=["res://.godot/imported/Lampka1.png-2de9df1471599f2d42b7a1b9458064a0.ctex"]
 
 [params]
 
