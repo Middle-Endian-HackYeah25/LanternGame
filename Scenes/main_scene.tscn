@@ -4,6 +4,12 @@
 
 [node name="Level0" type="Node2D" parent="."]
 
+[node name="Cam0_0" type="Camera2D" parent="Level0"]
+
 [node name="TileMap" type="TileMapLayer" parent="Level0"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="KeysContainer" type="HBoxContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
