@@ -4,15 +4,19 @@ extends CharacterBody2D
 @export var PUSH_FORCE = 10.0
 @export var INTERACT_RANGE = 200.0
 
+@onready var _animated_sprite = $playerSprite
+
 func _physics_process(delta):
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
 	
 	if direction:
 		velocity = direction * SPEED
+		_animated_sprite.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0 , SPEED)
 		velocity.y = move_toward(velocity.y, 0 , SPEED)
+		_animated_sprite.play("idle")
 	move_and_slide()
 	
 	for i in get_slide_collision_count():

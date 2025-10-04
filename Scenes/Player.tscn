@@ -1,16 +1,43 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck40427nwjh4a"]
+[gd_scene load_steps=12 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://8m6qcspndh80" path="res://Assets/Latarka2.png" id="3_gntrk"]
+[ext_resource type="Texture2D" uid="uid://dx6igqywej83a" path="res://Assets/Bohater/Bohater_2.png" id="3_megsn"]
 [ext_resource type="Script" uid="uid://cda2axq0xrgtj" path="res://Scripts/flashlight.gd" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://dos8lh5cxaiva" path="res://Assets/Bohater/Bohater_light.png" id="4_dewec"]
+[ext_resource type="Texture2D" uid="uid://c3lvykqm1dhv0" path="res://Assets/Bohater/Bohater_3.png" id="4_yoq75"]
 [ext_resource type="Script" uid="uid://j6o3u1tpa67w" path="res://Scripts/walking_player.gd" id="5_5ixxa"]
 [ext_resource type="AudioStream" uid="uid://bu8q6fu6xik1b" path="res://Audio/walking-96582-no-noise.wav" id="5_nn08x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 28.500174
 height = 95.99999
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksbbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gntrk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gntrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_megsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yoq75")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="Node2D"]
 
@@ -24,10 +51,11 @@ position = Vector2(-1, 8)
 rotation = 1.5711471
 shape = SubResource("CapsuleShape2D_dewec")
 
-[node name="playerSprite" type="Sprite2D" parent="CharacterBody2D"]
+[node name="playerSprite" type="AnimatedSprite2D" parent="CharacterBody2D"]
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_gntrk")
+sprite_frames = SubResource("SpriteFrames_ksbbd")
+animation = &"idle"
 
 [node name="flashlight" type="PointLight2D" parent="CharacterBody2D"]
 position = Vector2(33, -400)
