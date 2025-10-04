@@ -1,19 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck40427nwjh4a"]
+[gd_scene load_steps=10 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
-[ext_resource type="Texture2D" uid="uid://8m6qcspndh80" path="res://Assets/Latarka2.png" id="3_gntrk"]
-[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="4_5ixxa"]
+[ext_resource type="Script" uid="uid://cda2axq0xrgtj" path="res://Scripts/flashlight.gd" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://dos8lh5cxaiva" path="res://Assets/Bohater/Bohater_light.png" id="4_dewec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 28.500174
 height = 95.99999
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ixxa"]
+radius = 11.0
+height = 68.0
+
+[sub_resource type="Gradient" id="Gradient_nn08x"]
+offsets = PackedFloat32Array(0.12, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52ee3"]
+gradient = SubResource("Gradient_nn08x")
+fill = 1
+fill_from = Vector2(0.5140187, 0.53271025)
+fill_to = Vector2(0.49532712, 0.06542056)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dewec"]
+polygon = PackedVector2Array(-150, -485, 69, -42, 94, -42, 316, -489, 99, -36, 66, -36)
+
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_kyqiw")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(33, -400)
+rotation = -1.5707964
+scale = Vector2(0.56533253, 1.2411346)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(3.537735, 0.80571556)
+polygon = PackedVector2Array(-638.56213, -10.474297, -376.76938, -71.70857, 145.0473, -188.53714, 284.7881, -170.0057, 405.07117, -150.66855, 553.6564, -107.9657, 650.9442, -64.45712, 691.6282, -24.171413, 693.3971, 45.120014, 658.01965, 78.1543, 555.4252, 122.46858, 443.98633, 155.50287, 359.08057, 175.6457, 291.86353, 188.53712, 199.88232, 199.01141, -344.9297, 76.54285, -638.56213, 9.668558)
 
 [node name="playerCollision2D" type="CollisionShape2D" parent="CharacterBody2D"]
 z_index = 1
@@ -26,24 +51,32 @@ rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_gntrk")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(21, -30)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5ixxa")
+
 [node name="flashlight" type="PointLight2D" parent="CharacterBody2D"]
-position = Vector2(33, -400)
+position = Vector2(33.000004, -43)
 rotation = -1.5707964
-scale = Vector2(0.5653326, 1.2411348)
-texture = ExtResource("3_gntrk")
+scale = Vector2(2.7804155, 1.2411348)
+blend_mode = 2
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_52ee3")
+texture_scale = 8.77
 script = ExtResource("4_5ixxa")
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D/flashlight"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/flashlight/Area2D"]
-position = Vector2(3.537735, 0.80571556)
-polygon = PackedVector2Array(-638.56213, -10.474297, -383.84485, -67.68001, 145.0473, -188.53714, 284.7881, -170.0057, 405.07117, -150.66855, 553.6564, -107.9657, 650.9442, -64.45712, 691.6282, -24.171413, 693.3971, 45.120014, 658.01965, 78.1543, 555.4252, 122.46858, 443.98633, 155.50287, 359.08057, 175.6457, 291.86353, 188.53712, 199.88232, 199.01141, -344.9297, 76.54285, -638.56213, 9.668558)
 
 [node name="playerSilouette" type="PointLight2D" parent="CharacterBody2D"]
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
+color = Color(0.39308554, 0.3930855, 0.39308548, 1)
 energy = 0.8
+shadow_enabled = true
 texture = ExtResource("4_dewec")
 
-[connection signal="body_entered" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_exited"]
+[node name="flashlightCone" type="LightOccluder2D" parent="CharacterBody2D"]
+position = Vector2(-48, 2)
+occluder = SubResource("OccluderPolygon2D_dewec")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_exited"]

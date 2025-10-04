@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3kqkxp7odqwd"]
+[gd_scene load_steps=8 format=3 uid="uid://d3kqkxp7odqwd"]
 
 [ext_resource type="Script" path="res://Scripts/ObjectBehaviors/DoorBehavior.gd" id="1_l0b71"]
 [ext_resource type="Texture2D" uid="uid://bipqcn3i1o3ur" path="res://Assets/door_unlocked_placeholder.png" id="2_fahql"]
@@ -23,6 +23,10 @@ size = Vector2(100, 9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fahql"]
 radius = 2.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l0b71"]
+cull_mode = 2
+polygon = PackedVector2Array(-50, -4.033562, 50, -4.033562, 50, 5.0419526, -50, 5.0419526)
 
 [node name="Door" type="RigidBody2D"]
 scale = Vector2(1, 0.9916793)
@@ -50,3 +54,6 @@ shape = SubResource("CircleShape2D_fahql")
 position = Vector2(-47, 0)
 node_a = NodePath("..")
 node_b = NodePath("../hinge")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_l0b71")

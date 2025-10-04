@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm5whhtej6gi4"]
+[gd_scene load_steps=7 format=3 uid="uid://cm5whhtej6gi4"]
 
 [ext_resource type="Texture2D" uid="uid://b8xykidubwtb5" path="res://Assets/Lampa/Lampa.png" id="1_j7hgr"]
 
@@ -9,11 +9,18 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_t7uie")
 fill = 1
 fill_from = Vector2(0.97196263, 0.5046729)
-fill_to = Vector2(0.41588786, 0.49532712)
+fill_to = Vector2(0.44392523, 0.4906542)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t7uie"]
 radius = 20.131817
 height = 50.272728
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7hgr"]
+radius = 10.692493
+height = 57.33334
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j7hgr"]
+polygon = PackedVector2Array(539.99994, -259.99997, 539.99994, 259.99997, 549.99994, 259.99997, 549.99994, -259.99997)
 
 [node name="StaticLight" type="Node2D"]
 scale = Vector2(0.1, 0.1)
@@ -22,14 +29,21 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_j7hgr")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-839.99994, 0)
-scale = Vector2(43.4375, 44.999996)
-energy = 0.7
+position = Vector2(-1514.9998, 0)
+scale = Vector2(64.53125, 44.999996)
+energy = 1.78
 texture = SubResource("GradientTexture2D_210uc")
 
 [node name="Area2D" type="Area2D" parent="PointLight2D"]
-position = Vector2(9.438848, 0)
+position = Vector2(9.899281, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointLight2D/Area2D"]
 position = Vector2(1.9940081, 0.90909094)
 shape = SubResource("CapsuleShape2D_t7uie")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PointLight2D/Area2D"]
+position = Vector2(11.25326, 0)
+shape = SubResource("CapsuleShape2D_j7hgr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_j7hgr")
