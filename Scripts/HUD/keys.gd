@@ -16,6 +16,9 @@ func _update_icons(count: int) -> void:
 		tex.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		add_child(tex)
 
+func _on_keys_changed(new_amt: int) -> void:
+	_update_icons(new_amt)
+
 func _ready() -> void:
 	Inventory.connect("key_amt_changed", Callable(self, "_on_keys_changed"))
 	_update_icons(Inventory.key_count)
