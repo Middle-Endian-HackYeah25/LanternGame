@@ -4,7 +4,8 @@ extends RigidBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_lock()
-	add_to_group("interactable")
+	if locked:
+		add_to_group("interactable")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,6 +36,7 @@ func update_lock():
 		$AnimatedSprite2D.frame = 0
 
 func on_interact(player: Node):
+	print("interacting with ", self.name)
 	if Inventory.get_key():
 		locked = false
 		update_lock()
