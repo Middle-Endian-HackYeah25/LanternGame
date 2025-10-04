@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck40427nwjh4a"]
+[gd_scene load_steps=7 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
-[ext_resource type="Texture2D" uid="uid://dkqn3aacb50bl" path="res://Assets/Latarka2.png" id="3_gntrk"]
+[ext_resource type="Texture2D" uid="uid://8m6qcspndh80" path="res://Assets/Latarka2.png" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://cda2axq0xrgtj" path="res://Scenes/flashlight.gd" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://dos8lh5cxaiva" path="res://Assets/Bohater/Bohater_light.png" id="4_dewec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
@@ -30,6 +31,7 @@ position = Vector2(33, -400)
 rotation = -1.5707964
 scale = Vector2(0.5653326, 1.2411348)
 texture = ExtResource("3_gntrk")
+script = ExtResource("4_5ixxa")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D/flashlight"]
 
@@ -41,3 +43,6 @@ polygon = PackedVector2Array(-638.56213, -10.474297, -383.84485, -67.68001, 145.
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_dewec")
+
+[connection signal="body_entered" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_exited"]
