@@ -25,8 +25,16 @@ func _physics_process(delta):
 		
 
 func _process(delta):
-	look_at(get_global_mouse_position())
-	rotation_degrees += 90
+	var target_pos = get_global_mouse_position()
+	var target_angle = (target_pos - global_position).angle() + deg_to_rad(90)
+	var current_angle = rotation
+
+	# Interpolate rotation with easing
+	var angle_diff = abs(target_angle - current_angle)
+	var speed = lerp(10.0, 3.0, clamp(angle_diff / PI, 0, 1))  # Fast when far, slow when close
+	
+	rotation = lerp_angle(current_angle, target_angle, speed * delta)
+	
 
 func _ready() -> void:
 	add_to_group("player")
