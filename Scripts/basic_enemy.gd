@@ -43,24 +43,20 @@ func _integrate_forces(state):
 		
 			# 3. Directly set the linear velocity on the body's state
 			state.linear_velocity = target_velocity
+			instant_look_at(state,  player.position)
 		else:
 			current_direction = Vector2.ZERO
 			state.linear_velocity = Vector2.ZERO
 			player = get_tree().get_first_node_in_group("player")
 			if !player:
 				print("NoPlayer")
-
-
-func _process(delta):
-	# 4. Check if the enemy is moving
-	if current_direction.length_squared() > 0:
-		# Calculate the target rotation angle in radians
-		var target_rotation: float = current_direction.angle()
-		
-		# Optional: Add a 90 degree offset if your sprite is drawn facing right (0 degrees)
-		# If your sprite is drawn facing UP (-90 degrees), you don't need the offset, 
-		# or you might need a different offset. Test this!
-		var rotation_offset = deg_to_rad(90) 
-
-		# 5. Apply the rotation to the Sprite2D
-		sprite.rotation = target_rotation + rotation_offset
+				
+func instant_look_at(state: PhysicsDirectBodyState2D, target_position: Vector2) -> void:
+	var current_position: Vector2 = state.transform.origin
+	var target_dir: Vector2 = (target_position - current_position).normalized()
+	var target_angle: float = target_dir.angle()
+	var rotation_offset: float = deg_to_rad(90)
+	var final_target_angle: float = target_angle + rotation_offset
+	
+	state.transform = Transform2D(final_target_angle, current_position)
+	state.angular_velocity = 0.0
