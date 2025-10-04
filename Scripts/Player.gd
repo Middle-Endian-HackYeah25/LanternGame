@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const PUSH_FORCE = 10.0
+@export var SPEED = 300.0
+@export var PUSH_FORCE = 10.0
+@export var INTERACT_RANGE = 200.0
 
 
 
@@ -21,6 +22,10 @@ func _physics_process(delta):
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
 
+	if Input.is_action_just_pressed("interact"):
+		interact()
+		
+
 func _process(delta):
 	look_at(get_global_mouse_position())
 	rotation_degrees += 90
@@ -28,3 +33,18 @@ func _process(delta):
 
 func _ready() -> void:
 	add_to_group("player")
+	
+# finds the nearest interactable object, then interacts with it if constraints are met
+func interact() -> void:
+	var nearest = null
+	var min_distance = INF # infinity
+
+	var interactables = get_tree().get_nodes_in_group("interactable")
+	for i in interactables:
+		var distance = global_position.distance_to(i.global_position)
+		if distance < min_distance:
+			min_distance = distance
+			nearest = i
+	if nearest != null and min_distance < INTERACT_RANGE:
+		if nearest.has_method("on_interact"):
+			nearest.on_interact(self)
