@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgndhrm676xyr"
-path="res://.godot/imported/Gazety.png-4bc03a7eba946bea45ccfad410ad58c0.ctex"
+uid="uid://dtr7yf0onrne6"
+path="res://.godot/imported/pap3.png-4666437440960e72d44f5f540d0ee295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gazety/Gazety.png"
-dest_files=["res://.godot/imported/Gazety.png-4bc03a7eba946bea45ccfad410ad58c0.ctex"]
+source_file="res://Assets/Gazety/pap3.png"
+dest_files=["res://.godot/imported/pap3.png-4666437440960e72d44f5f540d0ee295.ctex"]
 
 [params]
 
