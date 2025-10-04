@@ -3,8 +3,6 @@ extends CharacterBody2D
 const SPEED = 300.0
 const PUSH_FORCE = 10.0
 
-
-
 func _physics_process(delta):
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -24,7 +22,6 @@ func _physics_process(delta):
 func _process(delta):
 	look_at(get_global_mouse_position())
 	rotation_degrees += 90
-
 
 func _ready() -> void:
 	add_to_group("player")
