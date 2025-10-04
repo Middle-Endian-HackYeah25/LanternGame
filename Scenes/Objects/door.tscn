@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3kqkxp7odqwd"]
+[gd_scene load_steps=10 format=3 uid="uid://d3kqkxp7odqwd"]
 
 [ext_resource type="Script" path="res://Scripts/ObjectBehaviors/DoorBehavior.gd" id="1_l0b71"]
 [ext_resource type="Texture2D" uid="uid://bipqcn3i1o3ur" path="res://Assets/door_unlocked_placeholder.png" id="2_fahql"]
+[ext_resource type="AudioStream" uid="uid://buc6ktkm7tn4k" path="res://Audio/door-sqeak2.wav" id="3_153u2"]
 [ext_resource type="Texture2D" uid="uid://dxnmxkf6fdygs" path="res://Assets/door_locked_placeholder.png" id="3_ab4ky"]
+[ext_resource type="AudioStream" uid="uid://bktk7jtp1jrbw" path="res://Audio/door-sqeak3.wav" id="4_mnli5"]
+[ext_resource type="AudioStream" uid="uid://t2o0mh8jjw4c" path="res://Audio/door-sqeak.wav" id="4_ynea2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a43ba"]
 animations = [{
@@ -28,7 +31,8 @@ radius = 2.0
 scale = Vector2(1, 0.9916793)
 mass = 2.0
 linear_damp = 4.0
-script = ExtResource("1_l0b71")
+script = ExtResource("1_p0e35")
+sounds = Array[AudioStream]([ExtResource("4_ynea2"), ExtResource("3_153u2"), ExtResource("4_mnli5")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -50,3 +54,6 @@ shape = SubResource("CircleShape2D_fahql")
 position = Vector2(-47, 0)
 node_a = NodePath("..")
 node_b = NodePath("../hinge")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 2.0

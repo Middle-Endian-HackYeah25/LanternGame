@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck40427nwjh4a"]
+
+[gd_scene load_steps=8 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
 [ext_resource type="Texture2D" uid="uid://8m6qcspndh80" path="res://Assets/Latarka2.png" id="3_gntrk"]
-[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://dos8lh5cxaiva" path="res://Assets/Bohater/Bohater_light.png" id="4_dewec"]
+[ext_resource type="Script" uid="uid://j6o3u1tpa67w" path="res://Scripts/walking_player.gd" id="5_5ixxa"]
+[ext_resource type="AudioStream" uid="uid://bu8q6fu6xik1b" path="res://Audio/walking-96582-no-noise.wav" id="5_nn08x"]
+[ext_resource type="Script" path="res://Scripts/flashlight.gd" id="4_5ixxa"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
 radius = 28.500174
@@ -39,11 +43,16 @@ script = ExtResource("4_5ixxa")
 position = Vector2(3.537735, 0.80571556)
 polygon = PackedVector2Array(-638.56213, -10.474297, -383.84485, -67.68001, 145.0473, -188.53714, 284.7881, -170.0057, 405.07117, -150.66855, 553.6564, -107.9657, 650.9442, -64.45712, 691.6282, -24.171413, 693.3971, 45.120014, 658.01965, 78.1543, 555.4252, 122.46858, 443.98633, 155.50287, 359.08057, 175.6457, 291.86353, 188.53712, 199.88232, 199.01141, -344.9297, 76.54285, -638.56213, 9.668558)
 
+[connection signal="body_entered" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_exited"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("5_nn08x")
+volume_db = 8.0
+script = ExtResource("5_5ixxa")
+
 [node name="playerSilouette" type="PointLight2D" parent="CharacterBody2D"]
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 energy = 0.8
 texture = ExtResource("4_dewec")
-
-[connection signal="body_entered" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_exited"]
