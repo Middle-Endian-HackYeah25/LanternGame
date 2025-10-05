@@ -1,7 +1,10 @@
 # 🎮 Office Nightmare
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-100000?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/Middle-Endian-HackYeah25/OfficeNightmare])
-[![Play Now](https://img.shields.io/badge/PLAY_NOW-WEB-0077B6?style=for-the-badge&logo=googlechrome&logoColor=white)]([https://middle-endian-hackyeah25.github.io/OfficeNightmare/])
+| Destination | Link |
+| :--- | :--- |
+| **Play the Game (Web)** | https://github.com/Middle-Endian-HackYeah25/OfficeNightmare |
+| **Game Repository** | https://middle-endian-hackyeah25.github.io/OfficeNightmare |
+
 ![Alt Text](Screenshots/hr.webp)
 
 A brief, catchy one-sentence summary of your game (e.g., A top-down survival horror game where light is your only weapon against the darkness).
@@ -79,5 +82,5 @@ This project was developed primarily using the [ENGINE NAME] engine.
 
 | Destination | Link |
 | :--- | :--- |
-| **Play the Game (Web)** | https://192.168.8.238:5000/LanternGame.html |
-| **Game Repository** | https://github.com/Middle-Endian-HackYeah25/LanternGame |
+| **Play the Game (Web)** | https://github.com/Middle-Endian-HackYeah25/OfficeNightmare |
+| **Game Repository** | https://middle-endian-hackyeah25.github.io/OfficeNightmare |
