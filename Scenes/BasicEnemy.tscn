@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://56bfxyxy407r"]
+[gd_scene load_steps=5 format=3 uid="uid://cfolky6ci8wuu"]
 
 [ext_resource type="Script" uid="uid://bi6d2smrdy8gs" path="res://Scripts/basic_enemy.gd" id="1_6x443"]
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_b7xc3"]
-[ext_resource type="PackedScene" uid="uid://bok8ukvj3gs55" path="res://Scenes/killzone.tscn" id="3_b7xc3"]
+[ext_resource type="Script" uid="uid://cbxkrtrnelhyk" path="res://Scripts/ObjectBehaviors/Teleportation.gd" id="3_b7xc3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6x443"]
 cull_mode = 2

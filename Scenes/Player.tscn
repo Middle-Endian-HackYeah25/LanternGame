@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
 [ext_resource type="Script" uid="uid://cda2axq0xrgtj" path="res://Scripts/flashlight.gd" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://dos8lh5cxaiva" path="res://Assets/Bohater/Bohater_light.png" id="4_dewec"]
-[ext_resource type="Script" uid="uid://j6o3u1tpa67w" path="res://Scripts/walking_player.gd" id="5_5ixxa"]
+[ext_resource type="Script" path="res://Scripts/walking_player.gd" id="5_5ixxa"]
 [ext_resource type="AudioStream" uid="uid://bu8q6fu6xik1b" path="res://Audio/walking-96582-no-noise.wav" id="5_nn08x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dewec"]
@@ -95,3 +95,5 @@ occluder = SubResource("OccluderPolygon2D_dewec")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_body_exited"]
+[connection signal="area_shape_entered" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="CharacterBody2D/flashlight/Area2D" to="CharacterBody2D/flashlight" method="_on_area_2d_area_shape_exited"]
