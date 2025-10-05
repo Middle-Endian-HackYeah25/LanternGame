@@ -16,6 +16,7 @@ A brief, catchy one-sentence summary of your game (e.g., A top-down survival hor
 **The Premise:**
 *(Try to survive, till you find the exit)*
 This game is a top-down based slice of the bigger concept of a puzzle game with game mechanics presentation and immersive story. 
+Play before playing: Assets/intro/Comp4.mp4
 
 
 
