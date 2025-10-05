@@ -1,20 +1,23 @@
-[gd_scene load_steps=18 format=4 uid="uid://uqasxqq44njg"]
+[gd_scene load_steps=21 format=4 uid="uid://uqasxqq44njg"]
 
 [ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
 [ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://d3kqkxp7odqwd" path="res://Scenes/Objects/door.tscn" id="2_iacmt"]
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://b0bntmw4lr7cq" path="res://Assets/movable_box_placeholder.png" id="2_lhp3t"]
-[ext_resource type="PackedScene" uid="uid://cfolky6ci8wuu" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
+[ext_resource type="PackedScene" uid="uid://56bfxyxy407r" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://5n0iv5h6l73a" path="res://Scenes/Objects/movable_box.tscn" id="3_ioaeq"]
 [ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
-[ext_resource type="Script" path="res://Scripts/ambient_player.gd" id="6_6ev3c"]
+[ext_resource type="Script" uid="uid://olim7csg7bph" path="res://Scripts/ambient_player.gd" id="6_6ev3c"]
+[ext_resource type="PackedScene" uid="uid://b86i2mx2246ai" path="res://Scenes/Objects/movable_pot-1.tscn" id="7_2ebs2"]
 [ext_resource type="AudioStream" uid="uid://bufdp0quenr3e" path="res://Audio/Ambient/demonic-ambience-horror-sound-8-vol-001-140825.mp3" id="7_mai8y"]
 [ext_resource type="AudioStream" uid="uid://bqn83qpkcfkk" path="res://Audio/Ambient/disturbing-horror-ambience-sound-7-vol-002-160623.mp3" id="8_76v2p"]
+[ext_resource type="PackedScene" uid="uid://d0ikitcq42nr1" path="res://Scenes/Objects/movable_pot-2.tscn" id="8_oyb3p"]
 [ext_resource type="AudioStream" uid="uid://d1hedcqsa2ucf" path="res://Audio/Ambient/dry-thunder1-364468.wav" id="10_drdnd"]
 [ext_resource type="AudioStream" uid="uid://btv4ft1lm2mhi" path="res://Audio/Ambient/ghost-whisper-351569.mp3" id="10_ioaeq"]
 [ext_resource type="AudioStream" uid="uid://dq6qlnk2cgtpm" path="res://Audio/Ambient/dry-thunder2-364468.wav" id="11_ioaeq"]
 [ext_resource type="AudioStream" uid="uid://bwsvaygs3cs6a" path="res://Audio/Ambient/dry-thunder3-364468.wav" id="12_7ewk0"]
+[ext_resource type="PackedScene" uid="uid://v7lg5ppwt58x" path="res://Scenes/Objects/movable_chair.tscn" id="16_gnsmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhp3t"]
 texture = ExtResource("2_lhp3t")
@@ -58,6 +61,15 @@ position = Vector2(-227, 216)
 position = Vector2(-221, -82)
 
 [node name="BasicEnemy" parent="Level0" instance=ExtResource("3_6ev3c")]
+
+[node name="Movable_chair" parent="Level0" instance=ExtResource("16_gnsmo")]
+position = Vector2(272, 45)
+
+[node name="Movable_pot" parent="Level0" instance=ExtResource("7_2ebs2")]
+position = Vector2(-213, 8)
+
+[node name="Movable_pot2" parent="Level0" instance=ExtResource("8_oyb3p")]
+position = Vector2(-88, 148)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

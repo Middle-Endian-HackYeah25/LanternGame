@@ -14,7 +14,6 @@ radius = 16.335567
 height = 42.000492
 
 [node name="Movable_pot" type="Node2D"]
-scale = Vector2(1.7142423, 1.6914397)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 mass = 2.0
@@ -25,12 +24,13 @@ sounds = Array[AudioStream]([ExtResource("2_oput3"), ExtResource("3_xo0p4"), Ext
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture_filter = 1
-scale = Vector2(0.08189059, 0.08189059)
+scale = Vector2(0.15312268, 0.15342145)
 texture = ExtResource("6_veeyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(-9.5218604e-11, 0)
 rotation = -1.5700432
+scale = Vector2(1.8698446, 1.8734928)
 shape = SubResource("CapsuleShape2D_0pngp")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
