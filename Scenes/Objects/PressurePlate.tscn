@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://634ir0fl4no5"]
 
 [ext_resource type="Script" uid="uid://i8llx5ygnhs" path="res://Scripts/ObjectBehaviors/pressure_plate.gd" id="1_wm6fh"]
-[ext_resource type="Texture2D" uid="uid://dlch0xjfhxcon" path="res://Assets/podloga/plytka_naciskowa1.png" id="1_wpibl"]
+[ext_resource type="Texture2D" uid="uid://b3gluj8w22np2" path="res://Assets/podloga/plytka_naciskowa5.png" id="2_wm6fh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm6fh"]
 size = Vector2(1079, 1082)
@@ -11,7 +11,8 @@ scale = Vector2(0.05, 0.05)
 script = ExtResource("1_wm6fh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wpibl")
+scale = Vector2(8.397669, 8.397669)
+texture = ExtResource("2_wm6fh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
