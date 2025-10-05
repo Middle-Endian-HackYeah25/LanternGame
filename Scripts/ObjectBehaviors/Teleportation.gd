@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var skip_point = false
 
 func isPointDark(point: Vector2) -> bool:
@@ -29,8 +28,10 @@ func teleport(TPCoords: Array[Vector2]) -> void:
 		for point in TPCoords:
 			if isPointDark(point):
 				valid_coords.append(point)
+			else:
+				print("point ", point, " is not dark")
 
 		if valid_coords.size() > 0:
 			var random_point = valid_coords.pick_random()
 			print("teleporting to ", random_point)
-			get_parent().global_position = random_point
+			get_parent().global_transform = Transform2D(get_parent().rotation_degrees, random_point)
