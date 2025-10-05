@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbeouj3ij4afl"
+path="res://.godot/imported/disturbing-horror-ambience-sound-7-vol-002-160623 (copy 1).mp3-cb9e1526673c18cf2bbd417d6f20c150.mp3str"
+
+[deps]
+
+source_file="res://Audio/Ambient/disturbing-horror-ambience-sound-7-vol-002-160623 (copy 1).mp3"
+dest_files=["res://.godot/imported/disturbing-horror-ambience-sound-7-vol-002-160623 (copy 1).mp3-cb9e1526673c18cf2bbd417d6f20c150.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -13,6 +13,8 @@ func _ready() -> void:
 	#pass
 
 @onready var audio = $AudioStreamPlayer2D
+@onready var door_unlock_audio = $doorUnlockPLayer
+
 @export var sounds: Array[AudioStream] = []
 
 func play_random_sound():
@@ -34,6 +36,7 @@ func update_lock():
 	else :
 		freeze = false
 		$AnimatedSprite2D.frame = 0
+		door_unlock_audio.play()
 
 func on_interact(player: Node):
 	if Inventory.get_key():

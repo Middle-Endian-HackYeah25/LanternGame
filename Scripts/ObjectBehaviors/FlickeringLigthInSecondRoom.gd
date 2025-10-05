@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var random_timer = $RandomTimer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var my_toggle_bool: bool = false
 var was_turned_on: bool = false 
@@ -10,6 +11,7 @@ const MAX_TIME: float = 0.8
 func TurnOn():
 	self.show()
 	was_turned_on = true
+	audio_stream_player_2d.play()
 	
 func _ready():
 

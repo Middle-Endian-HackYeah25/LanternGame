@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpcbcwfc8q7fq"
+path="res://.godot/imported/demonic-ambience-horror-sound-8-vol-001-140825 (copy 1).mp3-c8c8e24c44a2da4d5489d9a5f382e652.mp3str"
+
+[deps]
+
+source_file="res://Audio/Ambient/demonic-ambience-horror-sound-8-vol-001-140825 (copy 1).mp3"
+dest_files=["res://.godot/imported/demonic-ambience-horror-sound-8-vol-001-140825 (copy 1).mp3-c8c8e24c44a2da4d5489d9a5f382e652.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
