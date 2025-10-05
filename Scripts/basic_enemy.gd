@@ -34,9 +34,11 @@ func _entered_light():
 # --- This function now only REQUESTS a teleport ---
 func _left_light():
 	is_in_light = false
-	if !TPCoords.is_empty():
-		teleport_destination = TPCoords[randi() % TPCoords.size()]
-		teleport_requested = true
+	if randi() % 3 == 0:
+		if !TPCoords.is_empty():
+			teleport_destination = TPCoords[randi() % TPCoords.size()]
+			teleport_requested = true
+	return
 
 # --- All physics logic is now safely inside _integrate_forces ---
 func _integrate_forces(state: PhysicsDirectBodyState2D):
