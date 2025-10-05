@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjvbdx4cvdq5f"]
+
+[ext_resource type="Texture2D" uid="uid://bt8q73t2anywv" path="res://Assets/Biurko/Biurko.png" id="1_qi4oc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lswnk"]
+size = Vector2(275, 381)
+
+[node name="Desk" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_lswnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.38555828, 0.38555828)
+texture = ExtResource("1_qi4oc")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://b86i2mx2246ai"]
+
+[ext_resource type="Script" uid="uid://00h46xkqmfpl" path="res://Scripts/movable_box.gd" id="1_tv661"]
+[ext_resource type="AudioStream" uid="uid://bemgsosuh2pwt" path="res://Audio/cardboard-box-slides-1.wav" id="2_5yasp"]
+[ext_resource type="AudioStream" uid="uid://uexa3sxd1pso" path="res://Audio/cardboard-box-slides-2.wav" id="3_a31xx"]
+[ext_resource type="AudioStream" uid="uid://c8n3hb1djb4f" path="res://Audio/cardboard-box-slides-3.wav" id="4_tr4ag"]
+[ext_resource type="AudioStream" uid="uid://dlsrd23himuew" path="res://Audio/cardboard-box-slides-4.wav" id="5_w5j3q"]
+[ext_resource type="Texture2D" uid="uid://u0uyd5ul26y5" path="res://Assets/Kwiatek/Kwaitek.png" id="6_jt05f"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7u5cl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0pngp"]
+radius = 16.335567
+height = 42.000492
+
+[node name="Movable_pot" type="Node2D"]
+scale = Vector2(1.7142423, 1.6914397)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_7u5cl")
+linear_damp = 4.0
+script = ExtResource("1_tv661")
+sounds = Array[AudioStream]([ExtResource("2_5yasp"), ExtResource("3_a31xx"), ExtResource("4_tr4ag"), ExtResource("5_w5j3q")])
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+scale = Vector2(0.08189059, 0.08189059)
+texture = ExtResource("6_jt05f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-9.5218604e-11, 0)
+rotation = -1.5700432
+shape = SubResource("CapsuleShape2D_0pngp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+volume_db = -4.0
