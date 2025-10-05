@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfolky6ci8wuu"]
+[gd_scene load_steps=6 format=3 uid="uid://cfolky6ci8wuu"]
 
 [ext_resource type="Script" uid="uid://bi6d2smrdy8gs" path="res://Scripts/basic_enemy.gd" id="1_6x443"]
 [ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_b7xc3"]
-[ext_resource type="Script" uid="uid://cbxkrtrnelhyk" path="res://Scripts/ObjectBehaviors/Teleportation.gd" id="3_b7xc3"]
+[ext_resource type="PackedScene" uid="uid://cknvohi4h43jl" path="res://Scenes/killzone.tscn" id="3_b7xc3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6x443"]
 cull_mode = 2
 polygon = PackedVector2Array(-53, -64, 52, -64, 59, -60, 64, -54, 64, 50, 61, 59, 54, 64, -52, 64, -60, 60, -64, 53, -64, -53, -60, -60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7xc3"]
+size = Vector2(133, 142)
 
 [node name="BasicEnemy" type="RigidBody2D"]
 script = ExtResource("1_6x443")
@@ -22,6 +25,6 @@ occluder = SubResource("OccluderPolygon2D_6x443")
 
 [node name="killzone" parent="." instance=ExtResource("3_b7xc3")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="killzone"]
-scale = Vector2(1.0499346, 1.0499346)
-polygon = PackedVector2Array(63, 3, 63, 54, 48, 62, -1, 64, -51, 62, -60, 50, -61, 0, -62, -53, -52, -62, -2, -66, 49, -61, 62, -51)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_b7xc3")
