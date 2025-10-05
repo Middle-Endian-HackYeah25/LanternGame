@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://5n0iv5h6l73a"]
 
-[ext_resource type="Texture2D" uid="uid://b0bntmw4lr7cq" path="res://Assets/movable_box_placeholder.png" id="1_7u5cl"]
 [ext_resource type="Script" uid="uid://00h46xkqmfpl" path="res://Scripts/movable_box.gd" id="1_aodk3"]
 [ext_resource type="AudioStream" uid="uid://bemgsosuh2pwt" path="res://Audio/cardboard-box-slides-1.wav" id="2_4vssd"]
 [ext_resource type="AudioStream" uid="uid://uexa3sxd1pso" path="res://Audio/cardboard-box-slides-2.wav" id="3_7avo2"]
 [ext_resource type="AudioStream" uid="uid://c8n3hb1djb4f" path="res://Audio/cardboard-box-slides-3.wav" id="4_b1nnu"]
 [ext_resource type="AudioStream" uid="uid://dlsrd23himuew" path="res://Audio/cardboard-box-slides-4.wav" id="5_7avo2"]
+[ext_resource type="Texture2D" uid="uid://cfrjjgwond2o2" path="res://Assets/Karton/Karton1.png" id="6_7avo2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7u5cl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3sbr"]
-size = Vector2(60, 60)
+size = Vector2(60, 58.378193)
 
 [node name="Movable_box" type="Node2D"]
 scale = Vector2(1.7142423, 1.6914397)
@@ -23,9 +23,11 @@ sounds = Array[AudioStream]([ExtResource("2_4vssd"), ExtResource("3_7avo2"), Ext
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture_filter = 1
-texture = ExtResource("1_7u5cl")
+scale = Vector2(0.08189059, 0.08189059)
+texture = ExtResource("6_7avo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1.4021158)
 shape = SubResource("RectangleShape2D_t3sbr")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
