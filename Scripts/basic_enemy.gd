@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends Node2D
 
-@export var enemy_speed: float = 100.0
+@export var enemy_speed: float = 50.0
 
 var player: CharacterBody2D = null
 
@@ -16,8 +16,6 @@ func _ready():
 		print("NoPlayer")
 	
 	# Crucial: Disable gravity for this body
-	gravity_scale = 0.0
-	lock_rotation = false
 	add_to_group("LightSensitive")
 	
 	

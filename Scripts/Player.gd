@@ -7,7 +7,7 @@ extends CharacterBody2D
 func _physics_process(delta):
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
-	
+
 	if direction:
 		velocity = direction * SPEED
 	else:
@@ -34,6 +34,9 @@ func _process(delta):
 	
 	rotation = lerp_angle(current_angle, target_angle, speed * delta)
 	
+	if Input.is_action_just_pressed("Light"):
+		toggle_object_visibility()
+	
 
 func _ready() -> void:
 	add_to_group("player")
@@ -52,3 +55,7 @@ func interact() -> void:
 	if nearest != null and min_distance < INTERACT_RANGE:
 		if nearest.has_method("on_interact"):
 			nearest.on_interact(self)
+			
+func toggle_object_visibility() -> void:
+	var target_node = get_tree().get_first_node_in_group("firstLight")
+	target_node.show()
