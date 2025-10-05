@@ -28,7 +28,6 @@ func _process(delta):
 	var target_pos = get_global_mouse_position()
 	var target_angle = (target_pos - global_position).angle() + deg_to_rad(90)
 	var current_angle = rotation
-
 	# Interpolate rotation with easing
 	var angle_diff = abs(target_angle - current_angle)
 	var speed = lerp(10.0, 3.0, clamp(angle_diff / PI, 0, 1))  # Fast when far, slow when close

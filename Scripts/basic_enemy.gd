@@ -17,7 +17,7 @@ func _ready():
 	
 	# Crucial: Disable gravity for this body
 	gravity_scale = 0.0
-	lock_rotation = true
+	lock_rotation = false
 	add_to_group("LightSensitive")
 	
 	
@@ -43,7 +43,7 @@ func _integrate_forces(state):
 		
 			# 3. Directly set the linear velocity on the body's state
 			state.linear_velocity = target_velocity
-			instant_look_at(state,  player.position)
+			instant_look_at(state,  player.global_position)
 		else:
 			current_direction = Vector2.ZERO
 			state.linear_velocity = Vector2.ZERO
@@ -55,7 +55,7 @@ func instant_look_at(state: PhysicsDirectBodyState2D, target_position: Vector2) 
 	var current_position: Vector2 = state.transform.origin
 	var target_dir: Vector2 = (target_position - current_position).normalized()
 	var target_angle: float = target_dir.angle()
-	var rotation_offset: float = deg_to_rad(90)
+	var rotation_offset: float = deg_to_rad(180)
 	var final_target_angle: float = target_angle + rotation_offset
 	
 	state.transform = Transform2D(final_target_angle, current_position)
