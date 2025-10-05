@@ -15,10 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://d0ikitcq42nr1" path="res://Scenes/Objects/movable_pot-2.tscn" id="8_oyb3p"]
 [ext_resource type="PackedScene" uid="uid://cm5whhtej6gi4" path="res://Scenes/Objects/StaticLight.tscn" id="10_jvnna"]
 [ext_resource type="Script" uid="uid://b0c30f4e8h142" path="res://Scripts/ObjectBehaviors/exit_light1.gd" id="11_b48ew"]
-[ext_resource type="Script" path="res://Scripts/ObjectBehaviors/exit_light1.gd" id="11_b48ew"]
-[ext_resource type="AudioStream" uid="uid://dq6qlnk2cgtpm" path="res://Audio/Ambient/dry-thunder2-364468.wav" id="11_ioaeq"]
-[ext_resource type="AudioStream" uid="uid://bwsvaygs3cs6a" path="res://Audio/Ambient/dry-thunder3-364468.wav" id="12_7ewk0"]
-
 [ext_resource type="PackedScene" uid="uid://634ir0fl4no5" path="res://Scenes/Objects/PressurePlate.tscn" id="12_8edxt"]
 [ext_resource type="Script" uid="uid://c4d3o1slqyvrd" path="res://Scripts/ObjectBehaviors/Light_in_second_room.gd" id="13_5bov3"]
 [ext_resource type="PackedScene" uid="uid://bnbaiv1g1d78" path="res://Scenes/Objects/ExitLight.tscn" id="13_nt2eh"]
@@ -9177,6 +9173,7 @@ position = Vector2(346.99997, 260.99997)
 script = ExtResource("16_xle81")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Level0"]
+color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
