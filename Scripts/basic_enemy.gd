@@ -1,7 +1,10 @@
-extends RigidBody2D
+extends Node2D
 
-@export var enemy_speed: float = 100.0
+
+@export var enemy_speed: float = 50.0
+
 @export var TPCoords: Array[Vector2]
+
 
 var player: CharacterBody2D = null
 
@@ -22,8 +25,6 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	
 	# Crucial: Disable gravity for this body
-	gravity_scale = 0.0
-	lock_rotation = true
 	add_to_group("LightSensitive")
 	
 	
@@ -78,7 +79,7 @@ func instant_look_at(state: PhysicsDirectBodyState2D, target_position: Vector2) 
 	var current_position: Vector2 = state.transform.origin
 	var target_dir: Vector2 = (target_position - current_position).normalized()
 	var target_angle: float = target_dir.angle()
-	var rotation_offset: float = deg_to_rad(90)
+	var rotation_offset: float = deg_to_rad(180)
 	var final_target_angle: float = target_angle + rotation_offset
 	
 	state.transform = Transform2D(final_target_angle, current_position)

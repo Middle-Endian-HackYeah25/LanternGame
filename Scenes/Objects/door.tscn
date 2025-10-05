@@ -1,11 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3kqkxp7odqwd"]
+[gd_scene load_steps=8 format=3 uid="uid://d3kqkxp7odqwd"]
 
 [ext_resource type="Script" uid="uid://djhi8ynoxhjis" path="res://Scripts/ObjectBehaviors/DoorBehavior.gd" id="1_l0b71"]
-[ext_resource type="AudioStream" uid="uid://t2o0mh8jjw4c" path="res://Audio/door-sqeak.wav" id="2_153u2"]
 [ext_resource type="Texture2D" uid="uid://cpuvwry4w8xeo" path="res://Assets/Drzwi/Drzwi1.png" id="2_l0b71"]
-[ext_resource type="AudioStream" uid="uid://buc6ktkm7tn4k" path="res://Audio/door-sqeak2.wav" id="3_mnli5"]
 [ext_resource type="Texture2D" uid="uid://p7v6q5m0s5oo" path="res://Assets/Drzwi/Drzwi2.png" id="3_ynea2"]
-[ext_resource type="AudioStream" uid="uid://bktk7jtp1jrbw" path="res://Audio/door-sqeak3.wav" id="4_6qaid"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a43ba"]
 animations = [{
@@ -22,32 +19,31 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
-size = Vector2(100, 9)
+size = Vector2(92, 1.0083903)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fahql"]
 radius = 2.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l0b71"]
 cull_mode = 2
-polygon = PackedVector2Array(-50, -4.033562, 50, -4.033562, 50, 5.0419526, -50, 5.0419526)
+polygon = PackedVector2Array(-51, -4.033562, 46, -4.033562, 46, 5.0419526, -51, 5.0419526)
 
 [node name="Door" type="RigidBody2D"]
 scale = Vector2(1, 0.9916793)
 mass = 2.0
 linear_damp = 4.0
 script = ExtResource("1_l0b71")
-sounds = Array[AudioStream]([ExtResource("2_153u2"), ExtResource("3_mnli5"), ExtResource("4_6qaid")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-7.1054274e-15, 1.1920929e-07)
+position = Vector2(-1.9544711, -5.1656002e-08)
 rotation = 3.1415927
-scale = Vector2(0.09246618, -0.047026664)
+scale = Vector2(0.08884679, -0.047026664)
 sprite_frames = SubResource("SpriteFrames_a43ba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, 0.5)
+position = Vector2(-3, 0.5041952)
 shape = SubResource("RectangleShape2D_p0e35")
 
 [node name="hinge" type="AnimatableBody2D" parent="."]
@@ -64,4 +60,5 @@ node_b = NodePath("../hinge")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_l0b71")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

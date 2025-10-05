@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://634ir0fl4no5"]
+
+[ext_resource type="Script" uid="uid://i8llx5ygnhs" path="res://Scripts/ObjectBehaviors/pressure_plate.gd" id="1_wm6fh"]
+[ext_resource type="Texture2D" uid="uid://dlch0xjfhxcon" path="res://Assets/podloga/plytka_naciskowa1.png" id="1_wpibl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm6fh"]
+size = Vector2(1079, 1082)
+
+[node name="PressurePlate" type="Node2D"]
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_wm6fh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wpibl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_wm6fh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
