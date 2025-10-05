@@ -9,9 +9,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7u5cl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gihp6"]
+radius = 249.85
 
 [node name="Movable_chair" type="Node2D"]
-scale = Vector2(1.7142423, 1.6914397)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 mass = 2.0
@@ -22,13 +22,13 @@ sounds = Array[AudioStream]([ExtResource("2_gidvy"), ExtResource("3_nk2rt"), Ext
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture_filter = 1
-scale = Vector2(0.041124552, 0.041124552)
+scale = Vector2(0.12347267, 0.12347267)
 texture = ExtResource("6_nk2rt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(-5.8207647e-11, 1.1824248)
 rotation = -1.5700432
-scale = Vector2(1.3760033, 1.4213198)
+scale = Vector2(0.1698988, 0.17549416)
 shape = SubResource("CircleShape2D_gihp6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
