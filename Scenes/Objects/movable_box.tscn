@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://5n0iv5h6l73a"]
+[gd_scene load_steps=12 format=3 uid="uid://5n0iv5h6l73a"]
 
 [ext_resource type="Script" uid="uid://00h46xkqmfpl" path="res://Scripts/movable_box.gd" id="1_aodk3"]
+[ext_resource type="Script" uid="uid://cqpp6dntxhabx" path="res://Scripts/ObjectBehaviors/TPhelper.gd" id="1_cmlbd"]
 [ext_resource type="AudioStream" uid="uid://bemgsosuh2pwt" path="res://Audio/cardboard-box-slides-1.wav" id="2_4vssd"]
 [ext_resource type="AudioStream" uid="uid://uexa3sxd1pso" path="res://Audio/cardboard-box-slides-2.wav" id="3_7avo2"]
 [ext_resource type="AudioStream" uid="uid://c8n3hb1djb4f" path="res://Audio/cardboard-box-slides-3.wav" id="4_b1nnu"]
 [ext_resource type="AudioStream" uid="uid://dlsrd23himuew" path="res://Audio/cardboard-box-slides-4.wav" id="5_7avo2"]
 [ext_resource type="Texture2D" uid="uid://cfrjjgwond2o2" path="res://Assets/Karton/Karton1.png" id="6_7avo2"]
+[ext_resource type="Script" uid="uid://cbxkrtrnelhyk" path="res://Scripts/ObjectBehaviors/Teleportation.gd" id="7_b1nnu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7u5cl"]
 
@@ -15,6 +17,7 @@ size = Vector2(60, 58.378193)
 [sub_resource type="CircleShape2D" id="CircleShape2D_7avo2"]
 
 [node name="Movable_box" type="Node2D"]
+script = ExtResource("1_cmlbd")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_7u5cl")
@@ -46,3 +49,6 @@ node_b = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/RigidBody2D"]
 shape = SubResource("CircleShape2D_7avo2")
+
+[node name="TeleportationNode" type="Node2D" parent="RigidBody2D"]
+script = ExtResource("7_b1nnu")
