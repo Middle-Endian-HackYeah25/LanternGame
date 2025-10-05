@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dgasqdm0rqri1" path="res://Scripts/HUD/keys.gd" id="1_6l7je"]
 [ext_resource type="PackedScene" uid="uid://ck40427nwjh4a" path="res://Scenes/Player.tscn" id="1_jv6wh"]
-[ext_resource type="Texture2D" uid="uid://ur6is8832lt7" path="res://Assets/dirtyFloor.jpg" id="1_s8qe6"]
+[ext_resource type="Texture2D" uid="uid://dck6yr8081t18" path="res://Assets/podloga/TiledPodloga.jpg" id="1_s8qe6"]
 [ext_resource type="Texture2D" uid="uid://deae6yxjcaed0" path="res://Assets/podloga/Podloga1.png" id="1_xle81"]
 [ext_resource type="PackedScene" uid="uid://d3kqkxp7odqwd" path="res://Scenes/Objects/door.tscn" id="2_iacmt"]
-[ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://b0bntmw4lr7cq" path="res://Assets/movable_box_placeholder.png" id="2_lhp3t"]
 [ext_resource type="PackedScene" uid="uid://56bfxyxy407r" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://5n0iv5h6l73a" path="res://Scenes/Objects/movable_box.tscn" id="3_ioaeq"]
@@ -28,6 +27,7 @@
 [ext_resource type="Script" uid="uid://cnklp4jx1mfyv" path="res://Scripts/ObjectBehaviors/FlickeringLigthInSecondRoom.gd" id="15_yb0ja"]
 [ext_resource type="PackedScene" uid="uid://v7lg5ppwt58x" path="res://Scenes/Objects/movable_chair.tscn" id="16_gnsmo"]
 [ext_resource type="Script" uid="uid://dhvb0djd522t6" path="res://Scripts/ObjectBehaviors/pressure_plate2.gd" id="16_xle81"]
+[ext_resource type="Texture2D" uid="uid://dil26kmqtxv0p" path="res://Assets/Drzwi/Karta.png" id="20_s8qe6"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jvnna"]
 polygon = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
@@ -4551,8 +4551,8 @@ position = Vector2(8, 13)
 [node name="Level0" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Level0"]
-position = Vector2(-3.0000305, -8.999981)
-scale = Vector2(1.1579999, 0.9775112)
+position = Vector2(-6.499916, 2.9999847)
+scale = Vector2(1.887255, 1.612745)
 texture = ExtResource("1_s8qe6")
 
 [node name="Player" parent="Level0" instance=ExtResource("1_jv6wh")]
@@ -4642,12 +4642,13 @@ script = ExtResource("16_xle81")
 anchors_preset = -1
 anchor_right = 0.17400001
 anchor_bottom = 0.11000001
-offset_left = 1.0
-offset_top = -1.0
-offset_right = -0.4480133
-offset_bottom = -0.2800064
+offset_left = 60.0
+offset_top = 20.0
+offset_right = -124.44801
+offset_bottom = -35.280006
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_6l7je")
-key_texture = ExtResource("2_jv6wh")
+key_texture = ExtResource("20_s8qe6")
 
 [node name="KeyItem" parent="." instance=ExtResource("4_x6ack")]
 position = Vector2(-364, 119)
