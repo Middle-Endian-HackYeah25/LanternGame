@@ -36,7 +36,6 @@ func update_lock():
 		$AnimatedSprite2D.frame = 0
 
 func on_interact(player: Node):
-	print("interacting with ", self.name)
 	if Inventory.get_key():
 		locked = false
 		update_lock()

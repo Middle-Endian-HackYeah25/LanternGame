@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://deae6yxjcaed0" path="res://Assets/podloga/Podloga1.png" id="1_xle81"]
 [ext_resource type="PackedScene" uid="uid://d3kqkxp7odqwd" path="res://Scenes/Objects/door.tscn" id="2_iacmt"]
 [ext_resource type="Texture2D" uid="uid://b0bntmw4lr7cq" path="res://Assets/movable_box_placeholder.png" id="2_lhp3t"]
-[ext_resource type="PackedScene" uid="uid://56bfxyxy407r" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
+[ext_resource type="PackedScene" uid="uid://cfolky6ci8wuu" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://5n0iv5h6l73a" path="res://Scenes/Objects/movable_box.tscn" id="3_ioaeq"]
 [ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
 [ext_resource type="Script" uid="uid://csvwxa3ps3d4g" path="res://Scripts/ObjectBehaviors/CloseDoor.gd" id="6_5oxhp"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b86i2mx2246ai" path="res://Scenes/Objects/movable_pot-1.tscn" id="7_2ebs2"]
 [ext_resource type="AudioStream" uid="uid://bufdp0quenr3e" path="res://Audio/Ambient/demonic-ambience-horror-sound-8-vol-001-140825.mp3" id="7_mai8y"]
 [ext_resource type="AudioStream" uid="uid://bqn83qpkcfkk" path="res://Audio/Ambient/disturbing-horror-ambience-sound-7-vol-002-160623.mp3" id="8_76v2p"]
-[ext_resource type="PackedScene" uid="uid://d0ikitcq42nr1" path="res://Scenes/Objects/movable_pot-2.tscn" id="8_oyb3p"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/movable_pot-2.tscn" id="8_oyb3p"]
 [ext_resource type="AudioStream" uid="uid://d1hedcqsa2ucf" path="res://Audio/Ambient/dry-thunder1-364468.wav" id="10_drdnd"]
 [ext_resource type="AudioStream" uid="uid://btv4ft1lm2mhi" path="res://Audio/Ambient/ghost-whisper-351569.mp3" id="10_ioaeq"]
 [ext_resource type="PackedScene" uid="uid://cm5whhtej6gi4" path="res://Scenes/Objects/StaticLight.tscn" id="10_jvnna"]
@@ -4583,12 +4583,16 @@ rotation = -1.5707964
 position = Vector2(-11, -141)
 
 [node name="BasicEnemy" parent="Level0" instance=ExtResource("3_6ev3c")]
+
 position = Vector2(-225, -162)
 
 [node name="Door3" parent="Level0" instance=ExtResource("2_iacmt")]
 position = Vector2(-168, -163)
 rotation = -1.5707964
 metadata/_edit_lock_ = true
+
+TPCoords = Array[Vector2]([Vector2(0, 0), Vector2(100, 100), Vector2(250, 250)])
+
 
 [node name="Movable_chair" parent="Level0" instance=ExtResource("16_gnsmo")]
 position = Vector2(-481, 174)
