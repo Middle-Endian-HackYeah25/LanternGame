@@ -2,26 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dva1j4gccyteh" path="res://Scripts/ObjectBehaviors/KeyPickupBehavior.gd" id="1_adeng"]
 [ext_resource type="AudioStream" uid="uid://dytc6ahygbxhs" path="res://Audio/key-get-39925.mp3" id="2_1k1yx"]
-[ext_resource type="Texture2D" uid="uid://h4t0ee34fxuh" path="res://Assets/icon.svg" id="2_od4gd"]
+[ext_resource type="Texture2D" uid="uid://dil26kmqtxv0p" path="res://Assets/Drzwi/Karta.png" id="3_1k1yx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csrk3"]
-size = Vector2(25, 38.5)
+size = Vector2(50, 62)
 
 [node name="KeyItem" type="Node2D"]
+scale = Vector2(0.6, 0.6)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_adeng")
 pickup_sound = ExtResource("2_1k1yx")
 
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+rotation = 1.5707964
+scale = Vector2(0.2070312, 0.32031247)
+texture = ExtResource("3_1k1yx")
+region_rect = Rect2(387, 342, 304, 156)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(23.5, 38.75)
+scale = Vector2(0.9941055, 1)
 shape = SubResource("RectangleShape2D_csrk3")
 debug_color = Color(0.6534032, 0.353323, 0.9549709, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(23.249998, 38.5)
-scale = Vector2(0.2070312, 0.32031247)
-texture = ExtResource("2_od4gd")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
 stream = ExtResource("2_1k1yx")
