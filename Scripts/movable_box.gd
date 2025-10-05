@@ -1,10 +1,20 @@
 extends RigidBody2D
 
+# set from the sa
+var TPCoords: Array[Vector2]
+
+func _left_light():
+	$TeleportationNode.teleport(TPCoords)
+func _entered_light():
+	return
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 	add_to_group("boxes")
+	add_to_group("LightSensitive")
+
 
 @onready var audio = $AudioStreamPlayer2D
 @export var sounds: Array[AudioStream] = []

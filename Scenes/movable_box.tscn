@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmrn4k66pf5j5"]
+[gd_scene load_steps=7 format=3 uid="uid://bmrn4k66pf5j5"]
 
 [ext_resource type="Texture2D" uid="uid://b0bntmw4lr7cq" path="res://Assets/movable_box_placeholder.png" id="1_7u5cl"]
+[ext_resource type="Script" uid="uid://cqpp6dntxhabx" path="res://Scripts/ObjectBehaviors/TPhelper.gd" id="1_i7gqf"]
 [ext_resource type="Script" uid="uid://cbxkrtrnelhyk" path="res://Scripts/ObjectBehaviors/Teleportation.gd" id="1_t3sbr"]
+[ext_resource type="Script" uid="uid://dtl0mffbo638i" path="res://Scripts/ObjectBehaviors/Teleportable.gd" id="2_7plkj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7u5cl"]
 
@@ -10,12 +12,12 @@ size = Vector2(60, 60)
 
 [node name="Movable_box" type="Node2D"]
 scale = Vector2(1.7142423, 1.6914397)
-script = ExtResource("1_t3sbr")
-TPCoords = Array[Vector2]([Vector2(0, 0), Vector2(100, 100), Vector2(500, 500)])
+script = ExtResource("1_i7gqf")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_7u5cl")
 linear_damp = 4.0
+script = ExtResource("2_7plkj")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture_filter = 1
@@ -23,3 +25,6 @@ texture = ExtResource("1_7u5cl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_t3sbr")
+
+[node name="TeleportationNode" type="Node2D" parent="RigidBody2D"]
+script = ExtResource("1_t3sbr")
