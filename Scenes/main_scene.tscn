@@ -9,27 +9,30 @@
 [ext_resource type="PackedScene" uid="uid://cfolky6ci8wuu" path="res://Scenes/BasicEnemy.tscn" id="3_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://5n0iv5h6l73a" path="res://Scenes/Objects/movable_box.tscn" id="3_ioaeq"]
 [ext_resource type="PackedScene" uid="uid://dee2xrmscs5m7" path="res://Scenes/Objects/KeyItem.tscn" id="4_x6ack"]
-[ext_resource type="Script" path="res://Scripts/ObjectBehaviors/CloseDoor.gd" id="6_5oxhp"]
-[ext_resource type="Script" path="res://Scripts/ambient_player.gd" id="6_6ev3c"]
+[ext_resource type="Script" uid="uid://csvwxa3ps3d4g" path="res://Scripts/ObjectBehaviors/CloseDoor.gd" id="6_5oxhp"]
+[ext_resource type="Script" uid="uid://olim7csg7bph" path="res://Scripts/ambient_player.gd" id="6_6ev3c"]
 [ext_resource type="PackedScene" uid="uid://b86i2mx2246ai" path="res://Scenes/Objects/movable_pot-1.tscn" id="7_2ebs2"]
-[ext_resource type="AudioStream" uid="uid://bufdp0quenr3e" path="res://Audio/Ambient/demonic-ambience-horror-sound-8-vol-001-140825.mp3" id="7_mai8y"]
-[ext_resource type="AudioStream" uid="uid://bqn83qpkcfkk" path="res://Audio/Ambient/disturbing-horror-ambience-sound-7-vol-002-160623.mp3" id="8_76v2p"]
 [ext_resource type="PackedScene" uid="uid://d0ikitcq42nr1" path="res://Scenes/Objects/movable_pot-2.tscn" id="8_oyb3p"]
-[ext_resource type="AudioStream" uid="uid://d1hedcqsa2ucf" path="res://Audio/Ambient/dry-thunder1-364468.wav" id="10_drdnd"]
-[ext_resource type="AudioStream" uid="uid://btv4ft1lm2mhi" path="res://Audio/Ambient/ghost-whisper-351569.mp3" id="10_ioaeq"]
 [ext_resource type="PackedScene" uid="uid://cm5whhtej6gi4" path="res://Scenes/Objects/StaticLight.tscn" id="10_jvnna"]
+[ext_resource type="Script" uid="uid://b0c30f4e8h142" path="res://Scripts/ObjectBehaviors/exit_light1.gd" id="11_b48ew"]
 [ext_resource type="Script" path="res://Scripts/ObjectBehaviors/exit_light1.gd" id="11_b48ew"]
 [ext_resource type="AudioStream" uid="uid://dq6qlnk2cgtpm" path="res://Audio/Ambient/dry-thunder2-364468.wav" id="11_ioaeq"]
 [ext_resource type="AudioStream" uid="uid://bwsvaygs3cs6a" path="res://Audio/Ambient/dry-thunder3-364468.wav" id="12_7ewk0"]
 
 [ext_resource type="PackedScene" uid="uid://634ir0fl4no5" path="res://Scenes/Objects/PressurePlate.tscn" id="12_8edxt"]
-[ext_resource type="Script" path="res://Scripts/ObjectBehaviors/Light_in_second_room.gd" id="13_5bov3"]
+[ext_resource type="Script" uid="uid://c4d3o1slqyvrd" path="res://Scripts/ObjectBehaviors/Light_in_second_room.gd" id="13_5bov3"]
 [ext_resource type="PackedScene" uid="uid://bnbaiv1g1d78" path="res://Scenes/Objects/ExitLight.tscn" id="13_nt2eh"]
-[ext_resource type="Script" path="res://Scripts/ObjectBehaviors/FlickeringLigthInSecondRoom.gd" id="15_yb0ja"]
+[ext_resource type="Script" uid="uid://cnklp4jx1mfyv" path="res://Scripts/ObjectBehaviors/FlickeringLigthInSecondRoom.gd" id="15_yb0ja"]
 [ext_resource type="PackedScene" uid="uid://v7lg5ppwt58x" path="res://Scenes/Objects/movable_chair.tscn" id="16_gnsmo"]
 [ext_resource type="Script" uid="uid://dhvb0djd522t6" path="res://Scripts/ObjectBehaviors/pressure_plate2.gd" id="16_xle81"]
+[ext_resource type="AudioStream" uid="uid://c8u8n1gypcy7m" path="res://Audio/Ambient/flickeringlight-90411.mp3" id="17_yb0ja"]
 [ext_resource type="Texture2D" uid="uid://dk6k8ykb8bjuk" path="res://Assets/podloga/Podloga2_2.png" id="19_yb0ja"]
 [ext_resource type="Texture2D" uid="uid://dw8pur6damop5" path="res://Assets/key.png" id="21_yb0ja"]
+[ext_resource type="AudioStream" uid="uid://cdne0ct6pjrgb" path="res://Audio/dry-thunder1-364468.wav" id="24_s8qe6"]
+[ext_resource type="AudioStream" uid="uid://d055mo2xwf21v" path="res://Audio/dry-thunder2-364468.wav" id="25_yb0ja"]
+[ext_resource type="AudioStream" uid="uid://0qwwciij6rr0" path="res://Audio/dry-thunder3-364468.wav" id="26_15kh8"]
+[ext_resource type="AudioStream" uid="uid://cua20jgbtke3p" path="res://Audio/demonic-ambience-horror-sound-8-vol-001-140825.wav" id="27_viu5a"]
+[ext_resource type="AudioStream" uid="uid://u5l0a8lrg7cc" path="res://Audio/disturbing-horror-ambience-sound-7-vol-002-160623.wav" id="28_b00ha"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s8qe6"]
 texture = ExtResource("1_xle81")
@@ -9153,6 +9156,10 @@ script = ExtResource("15_yb0ja")
 
 [node name="RandomTimer" type="Timer" parent="Level0/StaticLight2"]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Level0/StaticLight2"]
+stream = ExtResource("17_yb0ja")
+volume_db = -10.0
+
 [node name="exitLight1" parent="Level0" instance=ExtResource("13_nt2eh")]
 position = Vector2(-381.00003, -46.999996)
 rotation = 1.5707964
@@ -9192,7 +9199,7 @@ position = Vector2(-364, 119)
 position = Vector2(-3, 0)
 volume_db = -8.0
 script = ExtResource("6_6ev3c")
-ambient_sounds = Array[AudioStream]([ExtResource("7_mai8y"), ExtResource("8_76v2p"), ExtResource("10_ioaeq"), ExtResource("10_drdnd"), ExtResource("11_ioaeq"), ExtResource("12_7ewk0")])
+ambient_sounds = Array[AudioStream]([ExtResource("24_s8qe6"), ExtResource("25_yb0ja"), ExtResource("26_15kh8"), ExtResource("27_viu5a"), ExtResource("28_b00ha")])
 
 [node name="Timer" type="Timer" parent="AmbientPlayer"]
 
