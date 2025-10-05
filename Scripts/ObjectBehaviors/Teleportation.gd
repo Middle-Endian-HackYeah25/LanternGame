@@ -33,5 +33,4 @@ func teleport(TPCoords: Array[Vector2]) -> void:
 
 		if valid_coords.size() > 0:
 			var random_point = valid_coords.pick_random()
-			print("teleporting to ", random_point)
 			get_parent().global_transform = Transform2D(get_parent().rotation_degrees, random_point)

@@ -20,8 +20,6 @@ var teleport_delay_timer: float = 0.0
 func _ready():
 	# Find the player node (already set up)
 	player = get_tree().get_first_node_in_group("player")
-	if !player:
-		print("NoPlayer")
 	
 	# Crucial: Disable gravity for this body
 	gravity_scale = 0.0
@@ -30,12 +28,10 @@ func _ready():
 	
 	
 func _entered_light():
-	print("InLight")
 	is_in_light = true; 
 
 # --- This function now only REQUESTS a teleport ---
 func _left_light():
-	print("NotInLight")
 	is_in_light = false
 	if !TPCoords.is_empty():
 		teleport_destination = TPCoords[randi() % TPCoords.size()]
