@@ -2,8 +2,8 @@
 
 | Destination | Link |
 | :--- | :--- |
-| **Play the Game (Web)** | https://github.com/Middle-Endian-HackYeah25/OfficeNightmare |
-| **Game Repository** | https://middle-endian-hackyeah25.github.io/OfficeNightmare |
+| **Play the Game (Web)** | https://middle-endian-hackyeah25.github.io/OfficeNightmare |
+| **Game Repository** | https://github.com/Middle-Endian-HackYeah25/OfficeNightmare |
 
 ![Alt Text](Screenshots/hr.webp)
 
@@ -80,7 +80,8 @@ This project was developed primarily using the [ENGINE NAME] engine.
 
 ## 🔗 Links
 
+
 | Destination | Link |
 | :--- | :--- |
-| **Play the Game (Web)** | https://github.com/Middle-Endian-HackYeah25/OfficeNightmare |
-| **Game Repository** | https://middle-endian-hackyeah25.github.io/OfficeNightmare |
+| **Play the Game (Web)** | https://middle-endian-hackyeah25.github.io/OfficeNightmare |
+| **Game Repository** | https://github.com/Middle-Endian-HackYeah25/OfficeNightmare |
