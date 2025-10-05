@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck40427nwjh4a"]
+[gd_scene load_steps=12 format=3 uid="uid://ck40427nwjh4a"]
 
 [ext_resource type="Script" uid="uid://cyof7yimh0imn" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://b3mwj6pl4q4vw" path="res://Assets/Bohater/Bohater_1.png" id="2_gntrk"]
@@ -31,6 +31,7 @@ polygon = PackedVector2Array(-150, -485, 69, -42, 94, -42, 316, -489, 99, -36, 6
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 9
 motion_mode = 1
 script = ExtResource("1_kyqiw")
 
