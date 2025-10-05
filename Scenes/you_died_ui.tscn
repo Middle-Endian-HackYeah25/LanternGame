@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://s87ymm471mlw"]
+
+[node name="YouDiedUI" type="Control"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -192.00002
+offset_top = -61.000004
+offset_right = -152.00002
+offset_bottom = -21.000004
+scale = Vector2(5.1618433, 5.1618433)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "YOU DIED"

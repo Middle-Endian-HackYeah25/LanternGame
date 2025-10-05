@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://v7lg5ppwt58x"]
+
+[ext_resource type="Script" uid="uid://00h46xkqmfpl" path="res://Scripts/movable_box.gd" id="1_nk2rt"]
+[ext_resource type="AudioStream" uid="uid://018us3fc8ohc" path="res://Audio/office-chair-rolling-1.wav" id="2_gidvy"]
+[ext_resource type="AudioStream" uid="uid://1bnbbilqndoa" path="res://Audio/office-chair-rolling-2.wav" id="3_nk2rt"]
+[ext_resource type="AudioStream" uid="uid://c6at17uoyda2e" path="res://Audio/office-chair-rolling-3.wav" id="4_gihp6"]
+[ext_resource type="Texture2D" uid="uid://uoqhwxx8q56e" path="res://Assets/Krzeslo/Krzeslo.png" id="6_nk2rt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7u5cl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gihp6"]
+radius = 249.85
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gidvy"]
+
+[node name="Movable_chair" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_7u5cl")
+linear_damp = 4.0
+angular_damp_mode = 1
+angular_damp = 0.5
+script = ExtResource("1_nk2rt")
+sounds = Array[AudioStream]([ExtResource("2_gidvy"), ExtResource("3_nk2rt"), ExtResource("4_gihp6")])
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+scale = Vector2(0.12347267, 0.12347267)
+texture = ExtResource("6_nk2rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-5.8207647e-11, 1.1824248)
+rotation = -1.5700432
+scale = Vector2(0.1698988, 0.17549416)
+shape = SubResource("CircleShape2D_gihp6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+volume_db = 6.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="RigidBody2D"]
+mass = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/RigidBody2D"]
+shape = SubResource("CircleShape2D_gidvy")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D/RigidBody2D"]
+node_a = NodePath("..")
+node_b = NodePath("../..")

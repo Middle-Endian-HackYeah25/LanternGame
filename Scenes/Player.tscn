@@ -31,6 +31,7 @@ polygon = PackedVector2Array(-150, -485, 69, -42, 94, -42, 316, -489, 99, -36, 6
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 9
 motion_mode = 1
 script = ExtResource("1_kyqiw")
 
