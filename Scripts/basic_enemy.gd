@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var enemy_speed: float = 100.0
+@export var TPCoords: Array[Vector2]
 
 var player: CharacterBody2D = null
 
@@ -28,6 +29,7 @@ func _entered_light():
 func _left_light():
 	print("NotInLight")
 	is_in_light = false; 
+	$TeleportationNode.teleport(TPCoords)
 
 func _integrate_forces(state):
 	if is_in_light: 

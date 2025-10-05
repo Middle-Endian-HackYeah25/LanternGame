@@ -58,6 +58,7 @@ position = Vector2(-227, 216)
 position = Vector2(-221, -82)
 
 [node name="BasicEnemy" parent="Level0" instance=ExtResource("3_6ev3c")]
+TPCoords = Array[Vector2]([Vector2(0, 0), Vector2(100, 100), Vector2(500, 500)])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
